@@ -96,3 +96,8 @@ a {
     color-scheme: dark;
   }
 }
+
+div p {
+  color: #000;
+  margin-bottom: 4px;
+}
