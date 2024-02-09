@@ -13,9 +13,16 @@ import SendIcon from '@mui/icons-material/Send';
 import SearchIcon from '@mui/icons-material/Search';
 
 export default function IconLabelButtons() {
+  const [mostrarFormulario, setMostrarFormulario] = React.useState(false);
   const [nome, setNome] = React.useState('');
   const [celular, setCelular] = React.useState('');
   const [dados, setDados] = React.useState([]);
+  const [documentoIdentificacao, setDocumentoIdentificacao] = React.useState('');
+  const [empresa, setEmpresa] = React.useState('');
+  const [setor, setSetor] = React.useState('');
+  const [endereco, setEndereco] = React.useState('');
+  const [comercial, setComercial] = React.useState('');
+  const [outros, setOutros] = React.useState('');
 
   const handleBuscarNomeClick = () => {
     var requestOptions = {
@@ -66,6 +73,49 @@ export default function IconLabelButtons() {
     }
   };
 
+  const handleAbrirFormulario = () => {
+    setMostrarFormulario(true);
+  };
+
+  const handleFecharFormulario = () => {
+    setMostrarFormulario(false);
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const dadosPessoa = {
+      nome,
+      documento_identificacao: parseInt(documentoIdentificacao),
+      empresa,
+      setor,
+      endereco,
+      comercial: parseInt(comercial),
+      celular: parseInt(celular),
+      outros: parseInt(outros)
+    };
+
+    try {
+      const response = await fetch('https://call-list-api-development.up.railway.app/person', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dadosPessoa)
+      });
+
+      if (response.ok) {
+        // A pessoa foi criada com sucesso, você pode fazer algo aqui, como fechar o formulário
+        setMostrarFormulario(false);
+      } else {
+        // Se a requisição falhou, você pode lidar com o erro aqui
+        console.error('Erro ao criar pessoa:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Erro ao criar pessoa:', error.message);
+    }
+  };
+
   return (
     <div style={{ width: '80%', padding: '20px', margin: '20px 0', backgroundColor: '#f0f0f0', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
       <Box
@@ -79,10 +129,29 @@ export default function IconLabelButtons() {
         <Stack direction="row" alignItems="center" spacing={2}>
           <TextField id="nome" label="Nome" variant="outlined" sx={{ width: '72%' }} value={nome} onChange={(e) => setNome(e.target.value)} onKeyPress={handleKeyPress} />
           <TextField id="celular" label="Celular" variant="outlined" sx={{ width: '14%' }} inputProps={{ maxLength: 11 }} value={celular} onChange={(e) => setCelular(e.target.value)} onKeyPress={handleCelularKeyPress} />
-          <Button variant="contained" startIcon={<SearchIcon />} size="large" onClick={handleBuscarNomeClick}>Buscar</Button>
-          <Fab color="primary" size='small' aria-label="add"><AddIcon /></Fab>
+          <Button variant="contained" startIcon={<SearchIcon />} size="large" onClick={handleBuscarNomeClick}></Button>
+          <Button variant="contained" size='large' startIcon={<AddIcon />} onClick={handleAbrirFormulario}></Button>
         </Stack>
+
       </Box>
+      {mostrarFormulario && (
+        <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'white', padding: '20px', borderRadius: '10px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)' }}>
+          <form onSubmit={handleSubmit}>
+            <Stack direction="column" spacing={2}>
+              <TextField label="Nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+              <TextField label="Documento Identificação" value={documentoIdentificacao} onChange={(e) => setDocumentoIdentificacao(e.target.value)} />
+              <TextField label="Empresa" value={empresa} onChange={(e) => setEmpresa(e.target.value)} />
+              <TextField label="Setor" value={setor} onChange={(e) => setSetor(e.target.value)} />
+              <TextField label="Endereço" value={endereco} onChange={(e) => setEndereco(e.target.value)} />
+              <TextField label="Comercial" value={comercial} onChange={(e) => setComercial(e.target.value)} />
+              <TextField label="Celular" value={celular} onChange={(e) => setCelular(e.target.value)} />
+              <TextField label="Outros" value={outros} onChange={(e) => setOutros(e.target.value)} />
+              <Button type="submit" variant="contained" startIcon={<SendIcon />}>Enviar</Button>
+              <Button variant="outlined" onClick={handleFecharFormulario}>Cancelar</Button>
+            </Stack>
+          </form>
+        </div>
+      )}
       {dados.length > 0 && (
         <div>
           {dados.map((item, index) => (
