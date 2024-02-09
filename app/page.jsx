@@ -11,12 +11,11 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import SendIcon from '@mui/icons-material/Send';
 import SearchIcon from '@mui/icons-material/Search';
-import { Input } from '@mui/material';
 
 export default function IconLabelButtons() {
   const [nome, setNome] = React.useState('');
   const [celular, setCelular] = React.useState('');
-  const [dados, setDados] = React.useState(null);
+  const [dados, setDados] = React.useState([]);
 
   const handleBuscarNomeClick = () => {
     var requestOptions = {
@@ -29,10 +28,9 @@ export default function IconLabelButtons() {
       .then(result => {
         console.log('Dados recebidos:', result);
         setDados(result);
+        limparInputs();
       })
       .catch(error => console.error('Erro ao buscar por nome:', error));
-
-    limparInputs();
   };
 
   const handleBuscarCelularClick = () => {
@@ -46,10 +44,9 @@ export default function IconLabelButtons() {
       .then(result => {
         console.log('Dados recebidos:', result);
         setDados(result);
+        limparInputs();
       })
       .catch(error => console.error('Erro ao buscar por celular:', error));
-
-    limparInputs();
   };
 
   const limparInputs = () => {
@@ -80,23 +77,27 @@ export default function IconLabelButtons() {
         autoComplete="off"
       >
         <Stack direction="row" alignItems="center" spacing={2}>
-          <TextField id="outlined-basic" label="Nome" variant="outlined" sx={{ width: '72%' }} value={nome} onChange={(e) => setNome(e.target.value)} onKeyPress={handleKeyPress} />
-          <TextField id="outlined-basic" label="Celular" variant="outlined" sx={{ width: '14%' }} inputProps={{ maxLength: 11 }} value={celular} onChange={(e) => setCelular(e.target.value)} onKeyPress={handleCelularKeyPress} />
-          <Button variant="contained" startIcon={<SearchIcon />} size="large" onClick={handleBuscarNomeClick}></Button>
+          <TextField id="nome" label="Nome" variant="outlined" sx={{ width: '72%' }} value={nome} onChange={(e) => setNome(e.target.value)} onKeyPress={handleKeyPress} />
+          <TextField id="celular" label="Celular" variant="outlined" sx={{ width: '14%' }} inputProps={{ maxLength: 11 }} value={celular} onChange={(e) => setCelular(e.target.value)} onKeyPress={handleCelularKeyPress} />
+          <Button variant="contained" startIcon={<SearchIcon />} size="large" onClick={handleBuscarNomeClick}>Buscar</Button>
           <Fab color="primary" size='small' aria-label="add"><AddIcon /></Fab>
         </Stack>
       </Box>
-      {dados && (
+      {dados.length > 0 && (
         <div>
-          <p>Nome: {dados.nome}</p>
-          <p>Empresa: {dados.empresa}</p>
-          <p>Setor: {dados.setor}</p>
-          <p>Celular: {dados.celular}</p>
+          {dados.map((item, index) => (
+            <div key={index}>
+              <p>Nome: {item.nome}</p>
+              <p>Empresa: {item.empresa}</p>
+              <p>Setor: {item.setor}</p>
+              <p>Celular: {item.celular}</p>
+            </div>
+          ))}
         </div>
       )}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }}>
         <div style={{ display: 'flex', alignItems: 'center' }}>
-          <Button variant="outlined" size='normal' startIcon={<DeleteIcon />}></Button>
+          <Button variant="outlined" size='normal' startIcon={<DeleteIcon />}>Excluir</Button>
           <Fab color="secondary" aria-label="edit" size='small' style={{ marginLeft: 8 }}>
             <EditIcon />
           </Fab>
@@ -105,7 +106,6 @@ export default function IconLabelButtons() {
           Enviar
         </Button>
       </div>
-
     </div>
   );
 }
