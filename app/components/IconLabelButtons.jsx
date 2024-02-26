@@ -8,21 +8,32 @@ import AddIcon from '@mui/icons-material/Add';
 function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, handleAbrirFormulario }) {
   const [nome, setNome] = useState('');
   const [celular, setCelular] = useState('');
+  const [tipoBusca, setTipoBusca] = useState('nome'); // 'nome' ou 'celular'
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
-      handleBuscarNomeClick(nome);
-    }
-  };
-
-  const handleCelularKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleBuscarCelularClick(celular);
+      if (tipoBusca === 'nome') {
+        handleBuscarNomeClick(nome);
+      } else {
+        handleBuscarCelularClick(celular);
+      }
+      // Reseta a lógica de busca
+      setNome('');
+      setCelular('');
+      setTipoBusca('nome');
     }
   };
 
   const handleSearchClick = () => {
-    handleBuscarNomeClick(nome);
+    if (tipoBusca === 'nome') {
+      handleBuscarNomeClick(nome);
+    } else {
+      handleBuscarCelularClick(celular);
+    }
+    // Reseta a lógica de busca
+    setNome('');
+    setCelular('');
+    setTipoBusca('nome');
   };
 
   return (
@@ -34,18 +45,18 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
           variant="outlined"
           sx={{ width: '50%' }}
           value={nome}
-          onChange={(e) => setNome(e.target.value)}
+          onChange={(e) => {setNome(e.target.value); setTipoBusca('nome');}}
           onKeyPress={handleKeyPress}
         />
         <TextField
           id="celular"
           label="Celular"
           variant="outlined"
-          sx={{ width: '9%' }}
+          sx={{ width: '10%' }}
           inputProps={{ maxLength: 11 }}
           value={celular}
-          onChange={(e) => setCelular(e.target.value)}
-          onKeyPress={handleCelularKeyPress}
+          onChange={(e) => {setCelular(e.target.value); setTipoBusca('celular');}}
+          onKeyPress={handleKeyPress}
         />
         <Button
           variant="contained"
