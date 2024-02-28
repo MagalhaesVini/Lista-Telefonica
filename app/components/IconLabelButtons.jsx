@@ -5,19 +5,31 @@ import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
 
+function formatarCelular(numero) {
+  if (!numero) return '';
+  
+  const apenasDigitos = numero.replace(/[^\d]/g, '');
+  
+  const match = apenasDigitos.match(/^(\d{2})(\d{1})(\d{4})(\d{4})$/);
+  if (match) {
+    return `(${match[1]}) ${match[2]} ${match[3]}-${match[4]}`;
+  }
+  
+  return numero;
+}
+
 function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, handleAbrirFormulario }) {
   const [nome, setNome] = useState('');
   const [celular, setCelular] = useState('');
-  const [tipoBusca, setTipoBusca] = useState('nome'); // 'nome' ou 'celular'
+  const [tipoBusca, setTipoBusca] = useState('nome');
 
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       if (tipoBusca === 'nome') {
         handleBuscarNomeClick(nome);
       } else {
-        handleBuscarCelularClick(celular);
+        handleBuscarCelularClick(celular.replace(/[^\d]/g, ''));
       }
-      // Reseta a lógica de busca
       setNome('');
       setCelular('');
       setTipoBusca('nome');
@@ -28,9 +40,8 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
     if (tipoBusca === 'nome') {
       handleBuscarNomeClick(nome);
     } else {
-      handleBuscarCelularClick(celular);
+      handleBuscarCelularClick(celular.replace(/[^\d]/g, ''));
     }
-    // Reseta a lógica de busca
     setNome('');
     setCelular('');
     setTipoBusca('nome');
@@ -52,9 +63,9 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
           id="celular"
           label="Celular"
           variant="outlined"
-          sx={{ width: '10%' }}
-          inputProps={{ maxLength: 11 }}
-          value={celular}
+          sx={{ width: '20%' }}
+          inputProps={{ maxLength: 15 }}
+          value={formatarCelular(celular)}
           onChange={(e) => {setCelular(e.target.value); setTipoBusca('celular');}}
           onKeyPress={handleKeyPress}
         />

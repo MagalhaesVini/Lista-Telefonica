@@ -76,9 +76,9 @@ body {
 }
 
 body {
-  background-color: #f0f0f0; /* Cor de fundo clara */
-  color: #333; /* Cor do texto escura */
-  font-family: Arial, sans-serif; /* Escolha de fonte legível */
+  background-color: #f0f0f0;
+  color: #333;
+  font-family: Arial, sans-serif;
   padding: 20px;
 }
 
@@ -102,6 +102,10 @@ body {
 
 .form-input {
   margin-bottom: 20px;
+}
+
+.dados-box {
+  background-color: #eee3e3;
 }
 
 .error-message {
