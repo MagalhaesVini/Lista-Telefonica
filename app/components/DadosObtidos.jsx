@@ -108,8 +108,8 @@ function DadosObtidos({ dados }) {
               <p style={{ marginBottom: '5px' }}><strong>Setor:</strong> {editingItemId === item._id && editedItemData ? editedItemData.setor : item.setor}</p>
               <p style={{ marginBottom: '5px' }}><strong>Telefone Comercial:</strong> {editingItemId === item._id && editedItemData ? formatarTelefone(editedItemData.comercial) : formatarTelefone(item.comercial)}</p>
               <p style={{ marginBottom: '5px' }}><strong>Outros:</strong> {editingItemId === item._id && editedItemData ? formatarTelefone(editedItemData.outros) : formatarTelefone(item.outros)}</p>
-              <p style={{ marginBottom: '5px', fontSize: 'xx-small', fontStyle: 'italic', position: 'absolute', top: 150, right: 500 , opacity: '0.5' }}><>id:</> {item._id}</p>
-              <div style={{ position: 'absolute', right: 0, top: 125 }}>
+              <p style={{ marginBottom: '5px', fontSize: 'xx-small', fontStyle: 'italic', position: 'absolute', top: 140, right: 500 , opacity: '0.5' }}><>id:</> {item._id}</p>
+              <div style={{ position: 'absolute', right: 0, top: 120 }}>
                 <button onClick={() => handleEditItem(item._id)} style={{ marginRight: '5px'}}><EditIcon /></button>
                 <button onClick={() => handleDeleteItem(item._id)}><DeleteIcon /></button>
               </div>
