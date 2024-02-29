@@ -11,19 +11,28 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 
   ### Funcionalidades:
 
-        Adicionar novo contato: Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone.
+Adicionar novo contato: 
+        
+        Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone.
 
-        Buscar contato: Possibilita buscar contatos na lista telefônica por nome ou número de celular. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
+Buscar contato: 
+        
+        Possibilita buscar contatos na lista telefônica por nome ou número de celular. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
 
-        Editar contato: Permite editar as informações de um contato existente na lista telefônica, incluindo nome, documento de identificação, empresa, setor e números de telefone.
+Editar contato:
 
-        Excluir contato: Permite excluir um contato da lista telefônica.
+        Permite editar as informações de um contato existente na lista telefônica, incluindo nome, documento de identificação, empresa, setor e números de telefone.
+
+Excluir contato: 
+        
+        Permite excluir um contato da lista telefônica.
 
    ### Como Usar
 
   Acessar o Sistema:
 
             Acesse o sistema através do link fornecido após a implantação no Vercel.
+            
   Criar um Novo Cadastro:
 
             Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
