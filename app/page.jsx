@@ -5,6 +5,8 @@ import IconLabelButtons from './components/IconLabelButtons';
 import Formulario from './components/Formulario';
 import DadosObtidos from './components/DadosObtidos';
 import Busca from './components/Busca';
+import './page.module.css'
+
 
 function Page() {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);

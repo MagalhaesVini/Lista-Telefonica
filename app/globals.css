@@ -76,8 +76,11 @@ body {
 }
 
 body {
-  background-color: #f0f0f0;
-  color: #333;
+  background-image: url("/images/background.jpeg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000000;
   font-family: Arial, sans-serif;
   padding: 20px;
 }
@@ -105,7 +108,9 @@ body {
 }
 
 .dados-box {
-  background-color: #eee3e3;
+  background-color: rgba(238, 227, 227, 0.8);
+  backdrop-filter: blur(20px);
+  opacity: 0.9 ;
 }
 
 .error-message {

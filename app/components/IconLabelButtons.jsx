@@ -54,7 +54,7 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
           id="nome"
           label="Nome"
           variant="outlined"
-          sx={{ width: '50%' }}
+          sx={{ width: '50%', backdropFilter: 'blur(2px)', }}
           value={nome}
           onChange={(e) => {setNome(e.target.value); setTipoBusca('nome');}}
           onKeyPress={handleKeyPress}
@@ -63,7 +63,7 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
           id="celular"
           label="Celular"
           variant="outlined"
-          sx={{ width: '20%' }}
+          sx={{ width: '20%', backdropFilter: 'blur(2px)',   }}
           inputProps={{ maxLength: 15 }}
           value={formatarCelular(celular)}
           onChange={(e) => {setCelular(e.target.value); setTipoBusca('celular');}}

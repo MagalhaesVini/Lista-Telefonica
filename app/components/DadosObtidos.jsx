@@ -42,7 +42,7 @@ function DadosObtidos({ dados }) {
   const [deleteMessage, setDeleteMessage] = useState(null);
   const [updateMessage, setUpdateMessage] = useState(null);
 
-  const itemsPerPage = 4;
+  const itemsPerPage = 5;
 
   useEffect(() => {
     setCurrentPage(1);
@@ -54,7 +54,7 @@ function DadosObtidos({ dados }) {
       const timer = setTimeout(() => {
         setDeleteMessage(null);
         setUpdateMessage(null);
-      }, 5000);
+      }, 4000);
 
       return () => clearTimeout(timer);
     }
@@ -120,7 +120,7 @@ function DadosObtidos({ dados }) {
         setDeletedItemIds(newDeletedItemIds);
         setExpandedItem(null);
         setConfirmDelete(false);
-        setDeleteMessage('Item excluído com sucesso');
+        setDeleteMessage('Cadastro excluído com sucesso');
       } catch (error) {
         console.error('Erro ao excluir o item:', error);
         setDeleteMessage('Erro ao excluir o item');
@@ -155,9 +155,21 @@ function DadosObtidos({ dados }) {
   return (
     <div className="dados-obtidos">
       {(deleteMessage || updateMessage) && (
-        <div className="message" style={{ textAlign: 'center', backgroundColor: deleteMessage ? (deleteMessage.includes('sucesso') ? 'green' : 'red') : 'green', color: 'white', padding: '10px', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+        <div className="message" style={{
+          textAlign: 'center',
+          backgroundColor: deleteMessage ? (deleteMessage.includes('sucesso') ? 'green' : 'red') : 'green',
+          color: 'white',
+          padding: '10px',
+          borderRadius: '5px',
+          position: 'fixed',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          zIndex: '9999'
+        }}>
           {deleteMessage || updateMessage}
         </div>
+
       )}
       {currentItems.map((item, index) => (
         <div key={index} className="dados-box" style={{ margin: '10px', padding: '15px', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
@@ -188,15 +200,15 @@ function DadosObtidos({ dados }) {
         </div>
       ))}
       {confirmEdit && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(238, 227, 227, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
           <p>Tem certeza que deseja editar?</p>
           <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
           <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
         </div>
       )}
       {confirmDelete && (
-        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
-          <p>Tem certeza que deseja excluir?</p>
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(238, 227, 227, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
+          <p>Tem certeza que deseja excluir {itemToDelete ? dadosState.find(item => item._id === itemToDelete)?.nome : ''}?</p>
           <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
           <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
         </div>
@@ -213,7 +225,7 @@ function DadosObtidos({ dados }) {
         page={currentPage}
         onChange={handlePageChange}
         shape="rounded"
-        size="large"
+        size="small"
         color="primary"
         style={{ marginTop: '20px', display: 'flex', justifyContent: 'center' }}
       />
