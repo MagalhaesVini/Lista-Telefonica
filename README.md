@@ -23,12 +23,18 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
    ### Como Usar
 
 <details>
-           
+
 <summary>Acessar o Sistema:</summary>
 
- Acesse o sistema através do link fornecido após a implantação no Vercel. 
-```ruby https://lista-telefonica-ruddy.vercel.app/
+### Acessar
+
+Acesse o sistema através do link fornecido após a implantação no Vercel.
+You can add an image or a code block, too.
+
+```ruby
+   https://lista-telefonica-ruddy.vercel.app/
 ```
+
 </details>
 
    
