@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sistema de Lista Telefônica
 
-## Getting Started
+## Descrição:
+        
+O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React
+que permite gerenciar contatos e realizar buscas por nome ou número de celular. 
+Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)
+(_Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba_) como fonte de dados para armazenar e recuperar informações dos contatos.
 
-First, run the development server:
+##
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  ### Funcionalidades:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Função | Descrição |
+| --- | --- |
+| Adicionar novo contato |  Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone. |
+| Buscar contato | Possibilita buscar contatos na lista telefônica por nome ou número de celular. Se nenhum campo de busca for preenchido, serão listados todos os contatos. |
+| Editar contato | Permite editar as informações de um contato existente na lista telefônica, incluindo nome, documento de identificação, empresa, setor e números de telefone. |
+| Excluir contato | Permite excluir um contato da lista telefônica. |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+##
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ## Como Usar
 
-## Learn More
+<details>
+        
+  <summary>Acessar o Sistema:</summary>
+  
+  ### Acesse o sistema através do link fornecido após a implantação no Vercel
+  
+  https://lista-telefonica-ruddy.vercel.app/
+  (_Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba_)
+  
+</details>
 
-To learn more about Next.js, take a look at the following resources:
+##
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<details>
+<summary>Criar um Novo Cadastro:</summary>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Siga os passos para criar um novo cadastro
 
-## Deploy on Vercel
+1. Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
+![Captura de tela 2024-02-29 112932](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/c13520ca-4ae6-49c2-940e-2397df4d384e)
+2. Preencha todos os campos obrigatórios, como nome e número de celular.
+![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/fb59a202-d429-485a-9112-d9de35ca2e2e)
+3. Clique em "Enviar" para salvar o novo contato.
+![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/6908cbad-cc58-4d33-8a07-80c47cc247a8)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+</details>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##
+
+<details>
+<summary>Buscar um Cadastro:</summary>
+
+### Siga os passos para realizar a busca de um cadastro
+
+1. Na barra de busca, digite o nome ou número de celular do contato desejado.
+2. Pressione Enter ou clique no botão "Buscar".
+3. Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
+
+</details>
+
+##
+
+<details>
+<summary>Editar um Cadastro:</summary>
+
+### Siga os passos para editar cadastro
+
+1. Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.
+2. O formulário de edição será aberto, permitindo que você atualize as informações do contato.
+3. Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
+
+</details>
+
+##
+
+<details>
+<summary>Excluir um Cadastro:</summary>
+
+### Siga os passos para excluir um cadastro
+
+1. Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
+2. Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
+
+</details>
+
+##
+
+ # Componentes
+
+Os principais componentes do sistema são:
+
+- **IconLabelButtons:** Exibe campos de busca por nome e número de celular, além de botões para abrir o formulário de adição de novos contatos.
+
+- **Formulario:** Utilizado para adicionar novos contatos à lista telefônica.
+
+- **FormularioEdicao:** Permite editar informações de contatos existentes.
+
+- **DadosObtidos:** Responsável por exibir os contatos obtidos da busca e permitir expandir, editar ou excluir cada contato.
+
+- **Busca:** Realiza requisições para buscar contatos na lista telefônica com base no nome ou número de celular fornecido.
+
+## Contribuindo
+
+Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Se você encontrar algum problema ou tiver alguma sugestão, por favor, abra uma issue.
+
