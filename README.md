@@ -22,6 +22,21 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 
    ### Como Usar
 
+   <details>
+
+<summary>Acessar o Sistema:</summary>
+
+### Acessar o Sistema:
+
+Acesse o sistema através do link fornecido após a implantação no Vercel. 
+
+
+```ruby
+   puts "vercel"
+```
+
+</details>
+
   Acessar o Sistema:
 
             Acesse o sistema através do link fornecido após a implantação no Vercel.
