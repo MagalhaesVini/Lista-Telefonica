@@ -57,6 +57,8 @@ Excluir contato:
             Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
             Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
 
+##
+
   ## Componentes
   
   Os principais componentes do sistema são:
@@ -71,7 +73,10 @@ Excluir contato:
             
             Busca: Realiza requisições para buscar contatos na lista telefônica com base no nome ou número de celular fornecido.
 
+##
+
   ## Contribuindo
 
         Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Se você encontrar algum problema ou tiver alguma sugestão, por favor, abra uma issue.
         
+##
