@@ -43,6 +43,8 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 1. Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
 2. Preencha todos os campos obrigatórios, como nome e número de celular.
 3. Clique em "Enviar" para salvar o novo contato.
+![image](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/4a9a5dae-a702-4f48-b98b-932eb9c5b77a)
+
 
 </details>
 
