@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sistema de Lista Telefônica
 
-## Getting Started
+  Descrição:
+        
+        O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React que permite gerenciar contatos e realizar buscas por nome ou número de celular. Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)
+        (Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba) como fonte de dados para armazenar e recuperar informações dos contatos.
 
-First, run the development server:
+  ## Funcionalidades
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+        Adicionar novo contato: Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+        Buscar contato: Possibilita buscar contatos na lista telefônica por nome ou número de celular. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+        Editar contato: Permite editar as informações de um contato existente na lista telefônica, incluindo nome, documento de identificação, empresa, setor e números de telefone.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+        Excluir contato: Permite excluir um contato da lista telefônica.
 
-## Learn More
+   ## Como Usar
 
-To learn more about Next.js, take a look at the following resources:
+   Acessar o Sistema:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+            Acesse o sistema através do link fornecido após a implantação no Vercel.
+            Criar um Novo Cadastro:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+            Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
+            Preencha todos os campos obrigatórios, como nome e número de celular.
+            Clique em "Enviar" para salvar o novo contato.
 
-## Deploy on Vercel
+  Buscar um Cadastro:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+            Na barra de busca, digite o nome ou número de celular do contato desejado.
+            Pressione Enter ou clique no botão "Buscar".
+            Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   Editar um Cadastro:
+
+            Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.
+            O formulário de edição será aberto, permitindo que você atualize as informações do contato.
+            Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
+            
+  Excluir um Cadastro:
+
+            Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
+            Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
+
+  ## Componentes
+  
+  Os principais componentes do sistema são:
+
+            IconLabelButtons: Exibe campos de busca por nome e número de celular, além de botões para abrir o formulário de adição de novos contatos.
+            
+            Formulario: Utilizado para adicionar novos contatos à lista telefônica.
+            
+            FormularioEdicao: Permite editar informações de contatos existentes.
+            
+            DadosObtidos: Responsável por exibir os contatos obtidos da busca e permitir expandir, editar ou excluir cada contato.
+            
+            Busca: Realiza requisições para buscar contatos na lista telefônica com base no nome ou número de celular fornecido.
+
+  ## Contribuindo
+
+        Sinta-se à vontade para contribuir com melhorias, correções de bugs ou novas funcionalidades. Se você encontrar algum problema ou tiver alguma sugestão, por favor, abra uma issue.
+        
