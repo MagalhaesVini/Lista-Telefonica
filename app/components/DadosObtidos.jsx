@@ -39,6 +39,8 @@ function DadosObtidos({ dados }) {
   const [confirmEdit, setConfirmEdit] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [itemToDelete, setItemToDelete] = useState(null);
+  const [deleteMessage, setDeleteMessage] = useState(null);
+  const [updateMessage, setUpdateMessage] = useState(null);
 
   const itemsPerPage = 4;
 
@@ -46,6 +48,17 @@ function DadosObtidos({ dados }) {
     setCurrentPage(1);
     setDadosState(dados);
   }, [dados]);
+
+  useEffect(() => {
+    if (deleteMessage || updateMessage) {
+      const timer = setTimeout(() => {
+        setDeleteMessage(null);
+        setUpdateMessage(null);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [deleteMessage, updateMessage]);
 
   const handlePageChange = (event, value) => {
     setCurrentPage(value);
@@ -89,14 +102,29 @@ function DadosObtidos({ dados }) {
     setEditedItemData(null);
     setIsEditing(false);
     setConfirmEdit(false);
+    setUpdateMessage(`Contato ${updatedData.nome} alterado com sucesso, atualize a página`);
   };
 
-  const handleDeleteItem = (id) => {
+  const handleDeleteItem = async (id) => {
     if (confirmDelete) {
-      const newDeletedItemIds = [...deletedItemIds, id];
-      setDeletedItemIds(newDeletedItemIds);
-      setExpandedItem(null);
-      setConfirmDelete(false);
+      try {
+        const response = await fetch(`https://call-list-api-development.up.railway.app/person/${id}`, {
+          method: 'DELETE',
+        });
+
+        if (!response.ok) {
+          throw new Error('Erro ao excluir o item');
+        }
+
+        const newDeletedItemIds = [...deletedItemIds, id];
+        setDeletedItemIds(newDeletedItemIds);
+        setExpandedItem(null);
+        setConfirmDelete(false);
+        setDeleteMessage('Item excluído com sucesso');
+      } catch (error) {
+        console.error('Erro ao excluir o item:', error);
+        setDeleteMessage('Erro ao excluir o item');
+      }
     } else {
       setItemToDelete(id);
       setConfirmDelete(true);
@@ -109,7 +137,7 @@ function DadosObtidos({ dados }) {
     setItemToDelete(null);
   };
 
-  const handleConfirmYes = () => {
+  const handleConfirmYes = async () => {
     if (confirmEdit) {
       setEditingItemId(itemToDelete);
       setIsEditing(true);
@@ -117,9 +145,7 @@ function DadosObtidos({ dados }) {
       const itemToEdit = dadosState.find((item) => item._id === itemToDelete);
       setEditedItemData(itemToEdit);
     } else if (confirmDelete) {
-      const newDeletedItemIds = [...deletedItemIds, itemToDelete];
-      setDeletedItemIds(newDeletedItemIds);
-      setExpandedItem(null);
+      handleDeleteItem(itemToDelete);
     }
     setConfirmEdit(false);
     setConfirmDelete(false);
@@ -128,6 +154,11 @@ function DadosObtidos({ dados }) {
 
   return (
     <div className="dados-obtidos">
+      {(deleteMessage || updateMessage) && (
+        <div className="message" style={{ textAlign: 'center', backgroundColor: deleteMessage ? (deleteMessage.includes('sucesso') ? 'green' : 'red') : 'green', color: 'white', padding: '10px', borderRadius: '5px', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+          {deleteMessage || updateMessage}
+        </div>
+      )}
       {currentItems.map((item, index) => (
         <div key={index} className="dados-box" style={{ margin: '10px', padding: '15px', borderRadius: '10px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', borderBottom: '1px solid #ccc', paddingBottom: '10px' }} onClick={() => handleItemClick(index)}>
