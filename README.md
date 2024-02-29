@@ -45,8 +45,7 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 2. Preencha todos os campos obrigatórios, como nome e número de celular.
 ![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/fb59a202-d429-485a-9112-d9de35ca2e2e)
 3. Clique em "Enviar" para salvar o novo contato.
-![image](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/4a9a5dae-a702-4f48-b98b-932eb9c5b77a)
-
+![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/6908cbad-cc58-4d33-8a07-80c47cc247a8)
 
 </details>
 
