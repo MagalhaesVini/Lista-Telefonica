@@ -32,6 +32,8 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
   
 </details>
 
+##
+
 <details>
         
   <summary>Criar um Novo Cadastro:</summary>
@@ -44,39 +46,45 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
   
 </details>
 
+##
+
 <details>
         
   <summary>Buscar um Cadastro:</summary>
   <ol>
           
-    <li>Na barra de busca, digite o nome ou número de celular do contato desejado.</li>
-    <li>Pressione Enter ou clique no botão "Buscar".</li>
-    <li>Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.</li>
+   <li>Na barra de busca, digite o nome ou número de celular do contato desejado.</li>
+   <li>Pressione Enter ou clique no botão "Buscar".</li>
+   <li>Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.</li>
   
   </ol>
   
 </details>
+
+##
 
 <details>
         
   <summary>Editar um Cadastro:</summary>
   <ol>
           
-    <li>Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.</li>
-    <li>O formulário de edição será aberto, permitindo que você atualize as informações do contato.</li>
-    <li>Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.</li>
+   <li>Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.</li>
+   <li>O formulário de edição será aberto, permitindo que você atualize as informações do contato.</li>
+   <li>Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.</li>
   
   </ol>
   
 </details>
+
+##
 
 <details>
         
   <summary>Excluir um Cadastro:</summary>
   <ol>
           
-    <li>Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.</li>
-    <li>Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.</li>
+   <li>Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.</li>
+   <li>Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.</li>
   
   </ol>
   
