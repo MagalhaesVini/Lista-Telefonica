@@ -15,8 +15,25 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
     outros: itemEditado ? itemEditado.outros : '',
   });
 
-  const handleSave = () => {
-    onSave(formData);
+  const handleSave = async () => {
+    try {
+      const response = await fetch(`https://call-list-api-development.up.railway.app/person/${itemEditado._id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.msg || 'Erro ao atualizar pessoa');
+      }
+
+      onSave(formData);
+    } catch (error) {
+      console.error('Erro ao atualizar pessoa:', error.message);
+    }
   };
 
   return (
@@ -30,7 +47,7 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
       <TextField label="Setor" value={formData.setor} onChange={(e) => setFormData({ ...formData, setor: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Telefone Comercial" value={formData.comercial} onChange={(e) => setFormData({ ...formData, comercial: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Outros" value={formData.outros} onChange={(e) => setFormData({ ...formData, outros: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
         <Button variant="contained" color="primary" startIcon={<SendIcon />} onClick={handleSave}>Salvar</Button>
         <Button variant="outlined" onClick={onCancel}>Cancelar</Button>
       </div>

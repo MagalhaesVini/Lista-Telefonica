@@ -4,6 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import Button from '@mui/material/Button';
 import FormularioEdicao from './FormularioEdicao';
 
 function formatarTelefone(telefone) {
@@ -35,6 +36,9 @@ function DadosObtidos({ dados }) {
   const [editedItemData, setEditedItemData] = useState(null);
   const [isEditing, setIsEditing] = useState(false);
   const [dadosState, setDadosState] = useState(dados);
+  const [confirmEdit, setConfirmEdit] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
+  const [itemToDelete, setItemToDelete] = useState(null);
 
   const itemsPerPage = 4;
 
@@ -59,11 +63,16 @@ function DadosObtidos({ dados }) {
   };
 
   const handleEditItem = (id) => {
-    setEditingItemId(id);
-    setIsEditing(true);
-    setExpandedItem(null);
-    const itemToEdit = dadosState.find(item => item._id === id); 
-    setEditedItemData(itemToEdit);
+    if (confirmEdit) {
+      setEditingItemId(id);
+      setIsEditing(true);
+      setExpandedItem(null);
+      const itemToEdit = dadosState.find((item) => item._id === id);
+      setEditedItemData(itemToEdit);
+    } else {
+      setItemToDelete(id);
+      setConfirmEdit(true);
+    }
   };
 
   const handleCancelEdit = () => {
@@ -73,18 +82,48 @@ function DadosObtidos({ dados }) {
   };
 
   const handleSaveEdit = (updatedData) => {
-
-    const updatedItems = dadosState.map(item =>
+    const updatedItems = dadosState.map((item) =>
       item._id === updatedData._id ? { ...item, ...updatedData } : item
     );
     setDadosState(updatedItems);
     setEditedItemData(null);
     setIsEditing(false);
+    setConfirmEdit(false);
   };
 
   const handleDeleteItem = (id) => {
-    setDeletedItemIds([...deletedItemIds, id]);
-    setExpandedItem(null);
+    if (confirmDelete) {
+      const newDeletedItemIds = [...deletedItemIds, id];
+      setDeletedItemIds(newDeletedItemIds);
+      setExpandedItem(null);
+      setConfirmDelete(false);
+    } else {
+      setItemToDelete(id);
+      setConfirmDelete(true);
+    }
+  };
+
+  const handleConfirmNo = () => {
+    setConfirmEdit(false);
+    setConfirmDelete(false);
+    setItemToDelete(null);
+  };
+
+  const handleConfirmYes = () => {
+    if (confirmEdit) {
+      setEditingItemId(itemToDelete);
+      setIsEditing(true);
+      setExpandedItem(null);
+      const itemToEdit = dadosState.find((item) => item._id === itemToDelete);
+      setEditedItemData(itemToEdit);
+    } else if (confirmDelete) {
+      const newDeletedItemIds = [...deletedItemIds, itemToDelete];
+      setDeletedItemIds(newDeletedItemIds);
+      setExpandedItem(null);
+    }
+    setConfirmEdit(false);
+    setConfirmDelete(false);
+    setItemToDelete(null);
   };
 
   return (
@@ -103,20 +142,34 @@ function DadosObtidos({ dados }) {
           {expandedItem === index && (
             <div style={{ marginTop: '10px', position: 'relative' }}>
               <p style={{ marginBottom: '5px' }}><strong>Documento de Identificação:</strong> {editingItemId === item._id && editedItemData ? formatarDocumento(editedItemData.documento_identificacao) : formatarDocumento(item.documento_identificacao)}</p>
-              <p style={{ marginBottom: '5px' }}><strong>Endereço:</strong> {editingItemId === item._id && editedItemData ? editedItemData.endereço : item.endereco}</p>
+              <p style={{ marginBottom: '5px' }}><strong>Endereço:</strong> {editingItemId === item._id && editedItemData ? editedItemData.endereço : item.endereço}</p>
               <p style={{ marginBottom: '5px' }}><strong>Empresa:</strong> {editingItemId === item._id && editedItemData ? editedItemData.empresa : item.empresa}</p>
               <p style={{ marginBottom: '5px' }}><strong>Setor:</strong> {editingItemId === item._id && editedItemData ? editedItemData.setor : item.setor}</p>
               <p style={{ marginBottom: '5px' }}><strong>Telefone Comercial:</strong> {editingItemId === item._id && editedItemData ? formatarTelefone(editedItemData.comercial) : formatarTelefone(item.comercial)}</p>
               <p style={{ marginBottom: '5px' }}><strong>Outros:</strong> {editingItemId === item._id && editedItemData ? formatarTelefone(editedItemData.outros) : formatarTelefone(item.outros)}</p>
-              <p style={{ marginBottom: '5px', fontSize: 'xx-small', fontStyle: 'italic', position: 'absolute', top: 140, right: 500 , opacity: '0.5' }}><>id:</> {item._id}</p>
-              <div style={{ position: 'absolute', right: 0, top: 120 }}>
-                <button onClick={() => handleEditItem(item._id)} style={{ marginRight: '5px'}}><EditIcon /></button>
-                <button onClick={() => handleDeleteItem(item._id)}><DeleteIcon /></button>
+              <p style={{ marginBottom: '5px', fontSize: 'xx-small', fontStyle: 'italic', position: 'absolute', top: 140, left: '50%', transform: 'translateX(-50%)', opacity: '0.5' }}><>id:</> {item._id}</p>
+              <div style={{ position: 'absolute', right: 5, top: 120 }}>
+                <Button onClick={() => handleEditItem(item._id)} style={{ marginRight: '5px' }} size='small' startIcon={<EditIcon />}>Editar</Button>
+                <Button onClick={() => handleDeleteItem(item._id)} size='small' startIcon={<DeleteIcon />}>Excluir</Button>
               </div>
             </div>
           )}
         </div>
       ))}
+      {confirmEdit && (
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
+          <p>Tem certeza que deseja editar?</p>
+          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
+          <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
+        </div>
+      )}
+      {confirmDelete && (
+        <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(255, 255, 255, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
+          <p>Tem certeza que deseja excluir?</p>
+          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
+          <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
+        </div>
+      )}
       {isEditing && (
         <FormularioEdicao
           itemEditado={editedItemData}
