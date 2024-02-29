@@ -30,7 +30,7 @@ Acesse o sistema através do link fornecido após a implantação no Vercel.
 
 
 ```ruby
-   [puts "vercel"](https://lista-telefonica-ruddy.vercel.app/)
+   https://lista-telefonica-ruddy.vercel.app/
 ```
 
 </details>
