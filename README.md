@@ -22,8 +22,6 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 
    ## Como Usar
 
-##
-
 <details>
         
   <summary>Acessar o Sistema:</summary>
