@@ -36,62 +36,45 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 ##
 
 <details>
-        
-  <summary>Criar um Novo Cadastro:</summary>
-  
-  <ul>
-    <li>Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.</li>
-    <li>Preencha todos os campos obrigatórios, como nome e número de celular.</li>
-    <li>Clique em "Enviar" para salvar o novo contato.</li>
-  </ul>
-  
+<summary>Criar um Novo Cadastro:</summary>
+
+1. Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
+2. Preencha todos os campos obrigatórios, como nome e número de celular.
+3. Clique em "Enviar" para salvar o novo contato.
+
 </details>
 
 ##
 
 <details>
-        
-  <summary>Buscar um Cadastro:</summary>
-  <ol>
-          
-   <li>Na barra de busca, digite o nome ou número de celular do contato desejado.</li>
-   <li>Pressione Enter ou clique no botão "Buscar".</li>
-   <li>Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.</li>
-  
-  </ol>
-  
+<summary>Buscar um Cadastro:</summary>
+
+1. Na barra de busca, digite o nome ou número de celular do contato desejado.
+2. Pressione Enter ou clique no botão "Buscar".
+3. Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
+
 </details>
 
 ##
 
 <details>
-        
-  <summary>Editar um Cadastro:</summary>
-  <ol>
-          
-   <li>Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.</li>
-   <li>O formulário de edição será aberto, permitindo que você atualize as informações do contato.</li>
-   <li>Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.</li>
-  
-  </ol>
-  
+<summary>Editar um Cadastro:</summary>
+
+1. Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.
+2. O formulário de edição será aberto, permitindo que você atualize as informações do contato.
+3. Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
+
 </details>
 
 ##
 
 <details>
-        
-  <summary>Excluir um Cadastro:</summary>
-  <ol>
-          
-   <li>Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.</li>
-   <li>Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.</li>
-  
-  </ol>
-  
-</details>
+<summary>Excluir um Cadastro:</summary>
 
-##
+1. Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
+2. Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
+
+</details>
 
   ## Componentes
   
