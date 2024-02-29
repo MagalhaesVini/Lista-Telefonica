@@ -34,19 +34,46 @@ You can add an image or a code block, too.
 ```ruby
    https://lista-telefonica-ruddy.vercel.app/
 ```
+</details>
 
-<summary>Criar um Novo Cadastro:</summary>
+<details>
+  <summary>Acessar o Sistema:</summary>
+  <p>Acesse o sistema através do link fornecido após a implantação no Vercel.</p>
+</details>
 
-### Criar
+<details>
+  <summary>Criar um Novo Cadastro:</summary>
+  <ul>
+    <li>Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.</li>
+    <li>Preencha todos os campos obrigatórios, como nome e número de celular.</li>
+    <li>Clique em "Enviar" para salvar o novo contato.</li>
+  </ul>
+</details>
 
-Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
-Preencha todos os campos obrigatórios, como nome e número de celular.
-Clique em "Enviar" para salvar o novo contato.
+<details>
+  <summary>Buscar um Cadastro:</summary>
+  <ol>
+    <li>Na barra de busca, digite o nome ou número de celular do contato desejado.</li>
+    <li>Pressione Enter ou clique no botão "Buscar".</li>
+    <li>Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.</li>
+  </ol>
+</details>
 
-```ruby
-   https://lista-telefonica-ruddy.vercel.app/
-```
+<details>
+  <summary>Editar um Cadastro:</summary>
+  <ol>
+    <li>Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.</li>
+    <li>O formulário de edição será aberto, permitindo que você atualize as informações do contato.</li>
+    <li>Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.</li>
+  </ol>
+</details>
 
+<details>
+  <summary>Excluir um Cadastro:</summary>
+  <ol>
+    <li>Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.</li>
+    <li>Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.</li>
+  </ol>
 </details>
 
    
