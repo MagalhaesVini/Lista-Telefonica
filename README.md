@@ -93,15 +93,15 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
   
   Os principais componentes do sistema são:
 
-            IconLabelButtons: Exibe campos de busca por nome e número de celular, além de botões para abrir o formulário de adição de novos contatos.
+        IconLabelButtons: Exibe campos de busca por nome e número de celular, além de botões para abrir o formulário de adição de novos contatos.
             
-            Formulario: Utilizado para adicionar novos contatos à lista telefônica.
+        Formulario: Utilizado para adicionar novos contatos à lista telefônica.
             
-            FormularioEdicao: Permite editar informações de contatos existentes.
+        FormularioEdicao: Permite editar informações de contatos existentes.
             
-            DadosObtidos: Responsável por exibir os contatos obtidos da busca e permitir expandir, editar ou excluir cada contato.
+        DadosObtidos: Responsável por exibir os contatos obtidos da busca e permitir expandir, editar ou excluir cada contato.
             
-            Busca: Realiza requisições para buscar contatos na lista telefônica com base no nome ou número de celular fornecido.
+        Busca: Realiza requisições para buscar contatos na lista telefônica com base no nome ou número de celular fornecido.
 
 ##
 
