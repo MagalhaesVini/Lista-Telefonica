@@ -1,8 +1,11 @@
 # Sistema de Lista Telefônica
 
-  ##Descrição:
+## Descrição:
         
-O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React que permite gerenciar contatos e realizar buscas por nome ou número de celular. Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)(Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba) como fonte de dados para armazenar e recuperar informações dos contatos.
+O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React
+que permite gerenciar contatos e realizar buscas por nome ou número de celular. 
+Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)
+(Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba) como fonte de dados para armazenar e recuperar informações dos contatos.
 
   ### Funcionalidades
 
@@ -16,10 +19,10 @@ O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React que 
 
    ### Como Usar
 
-   Acessar o Sistema:
+  Acessar o Sistema:
 
             Acesse o sistema através do link fornecido após a implantação no Vercel.
-            Criar um Novo Cadastro:
+  Criar um Novo Cadastro:
 
             Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
             Preencha todos os campos obrigatórios, como nome e número de celular.
