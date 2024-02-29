@@ -23,17 +23,21 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
    ### Como Usar
 
    <details>
-
-<summary>Acessar o Sistema:</summary>
-
-Acesse o sistema através do link fornecido após a implantação no Vercel. 
-
-
-```ruby
-   https://lista-telefonica-ruddy.vercel.app/
-```
-
-</details>
+        <summary>Acessar o Sistema:</summary>
+        Acesse o sistema através do link fornecido após a implantação no Vercel. 
+        ```ruby
+           https://lista-telefonica-ruddy.vercel.app/
+        ```
+   </details>
+   <details>
+        <summary>Criar um Novo Cadastro:</summary>
+        Acesse o sistema através do link fornecido após a implantação no Vercel. 
+        ```ruby
+           Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
+            Preencha todos os campos obrigatórios, como nome e número de celular.
+            Clique em "Enviar" para salvar o novo contato.
+        ```
+   </details>
 
   Acessar o Sistema:
 
