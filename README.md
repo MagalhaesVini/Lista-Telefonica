@@ -11,7 +11,7 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 
   ### Funcionalidades:
 
-          | Função | Descrição |
+| Função | Descrição |
         | --- | --- |
         | Adicionar novo contato |  Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone. |
         | Buscar contato | Possibilita buscar contatos na lista telefônica por nome ou número de celular. Se nenhum campo de busca for preenchido, serão listados todos os contatos. |
