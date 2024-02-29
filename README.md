@@ -31,16 +31,19 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 Acesse o sistema através do link fornecido após a implantação no Vercel.
 You can add an image or a code block, too.
 
-```ruby
-   https://lista-telefonica-ruddy.vercel.app/
-```
+
 </details>
 
 <details>
         
   <summary>Acessar o Sistema:</summary>
-  <p>Acesse o sistema através do link fornecido após a implantação no Vercel.</p>
+  ### Acesse o sistema através do link fornecido após a implantação no Vercel
+  
   https://lista-telefonica-ruddy.vercel.app/
+  
+  ```ruby
+   https://lista-telefonica-ruddy.vercel.app/
+  ```
 </details>
 
 <details>
