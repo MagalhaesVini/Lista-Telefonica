@@ -7,7 +7,9 @@ que permite gerenciar contatos e realizar buscas por nome ou número de celular.
 Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)
 (Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba) como fonte de dados para armazenar e recuperar informações dos contatos.
 
-  ### Funcionalidades
+##
+
+  ### Funcionalidades:
 
         Adicionar novo contato: Permite adicionar um novo contato à lista telefônica, fornecendo informações como nome, documento de identificação, empresa, setor e números de telefone.
 
