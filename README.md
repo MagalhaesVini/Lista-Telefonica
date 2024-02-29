@@ -26,6 +26,7 @@ Editar contato:
 Excluir contato: 
         
         Permite excluir um contato da lista telefônica.
+##
 
    ### Como Usar
 
