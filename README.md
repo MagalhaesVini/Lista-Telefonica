@@ -4,7 +4,7 @@
         
 O Sistema de Lista Telefônica é uma aplicação web desenvolvida em React
 que permite gerenciar contatos e realizar buscas por nome ou número de celular. 
-Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md)
+Utiliza a API [Call-List](**https://github.com/MagalhaesVini/Call-List-API/blob/main/README.md**)
 (Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba) como fonte de dados para armazenar e recuperar informações dos contatos.
 
 ##
