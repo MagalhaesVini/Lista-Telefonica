@@ -34,6 +34,7 @@ You can add an image or a code block, too.
 ```ruby
    https://lista-telefonica-ruddy.vercel.app/
 ```
+
 <summary>Criar um Novo Cadastro:</summary>
 
 ### Criar
