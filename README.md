@@ -38,6 +38,8 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 <details>
 <summary>Criar um Novo Cadastro:</summary>
 
+### Siga os passos para criar um novo cadastro
+
 1. Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
 2. Preencha todos os campos obrigatórios, como nome e número de celular.
 3. Clique em "Enviar" para salvar o novo contato.
