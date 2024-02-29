@@ -37,6 +37,7 @@ You can add an image or a code block, too.
 <details>
         
   <summary>Acessar o Sistema:</summary>
+  
   ### Acesse o sistema através do link fornecido após a implantação no Vercel
   
   https://lista-telefonica-ruddy.vercel.app/
