@@ -37,11 +37,14 @@ You can add an image or a code block, too.
 </details>
 
 <details>
+        
   <summary>Acessar o Sistema:</summary>
   <p>Acesse o sistema através do link fornecido após a implantação no Vercel.</p>
+  https://lista-telefonica-ruddy.vercel.app/
 </details>
 
 <details>
+        
   <summary>Criar um Novo Cadastro:</summary>
   <ul>
     <li>Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.</li>
