@@ -60,6 +60,8 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 2. Pressione Enter ou clique no botão "Buscar".
 3. Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
 
+![Captura de tela 2024-02-29 114906](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/cee72390-55cb-4922-8440-16871f326820)
+
 </details>
 
 ##
