@@ -72,8 +72,15 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 ### Siga os passos para editar cadastro
 
 1. Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.
-2. O formulário de edição será aberto, permitindo que você atualize as informações do contato.
-3. Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
+![Captura de tela 2024-02-29 114950](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/8689803a-57ec-45cb-a52b-19667586e933)
+
+2. Confirme a edição na caixa de mensagem ou cancele a ação.
+![Captura de tela 2024-02-29 115033](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/4f697094-a8c5-4b9e-a55f-15b70a13f937)
+
+3. O formulário de edição será aberto, permitindo que você atualize as informações do contato.
+4. Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
+![Captura de tela 2024-02-29 115100](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/ea4517cd-7ae3-4f3e-8c7f-b6211b1867f0)
+
 
 </details>
 
@@ -86,6 +93,10 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 
 1. Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
 2. Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
+![Captura de tela 2024-02-29 115143](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/2a65ab7d-0f1f-4839-a9a9-5c616efab7a9)
+
+_apos isso a caixa de mensagem deve aparecer informando que o item foi excluido._
+![Captura de tela 2024-02-29 115231](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/94701b80-1ac8-445d-8a5a-cd5f8757c7e6)
 
 </details>
 
