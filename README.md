@@ -41,11 +41,13 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 ### Siga os passos para criar um novo cadastro
 
 1. Na página inicial, clique no botão "Adicionar" para abrir o formulário de adição de novo contato.
-![Captura de tela 2024-02-29 112932](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/c13520ca-4ae6-49c2-940e-2397df4d384e)
+   ![Captura de tela 2024-02-29 112932](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/c13520ca-4ae6-49c2-940e-2397df4d384e)
+
 2. Preencha todos os campos obrigatórios, como nome e número de celular.
-![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/fb59a202-d429-485a-9112-d9de35ca2e2e)
+   ![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/fb59a202-d429-485a-9112-d9de35ca2e2e)
+
 3. Clique em "Enviar" para salvar o novo contato.
-![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/6908cbad-cc58-4d33-8a07-80c47cc247a8)
+   ![Captura de tela 2024-02-29 114159](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/6908cbad-cc58-4d33-8a07-80c47cc247a8)
 
 </details>
 
@@ -57,9 +59,11 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 ### Siga os passos para realizar a busca de um cadastro
 
 1. Na barra de busca, digite o nome ou número de celular do contato desejado.
+   
 2. Pressione Enter ou clique no botão "Buscar".
+   
 3. Os resultados da busca serão exibidos na tela. Se nenhum campo de busca for preenchido, serão listados todos os contatos.
-![Captura de tela 2024-02-29 114906](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/cee72390-55cb-4922-8440-16871f326820)
+   ![Captura de tela 2024-02-29 114906](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/cee72390-55cb-4922-8440-16871f326820)
 
 </details>
 
@@ -91,11 +95,12 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 ### Siga os passos para excluir um cadastro
 
 1. Após realizar a busca pelo contato que deseja excluir, clique no botão "Excluir" ao lado do contato.
+
 2. Uma janela de confirmação será exibida. Clique em "Sim" para confirmar a exclusão ou "Não" para cancelar.
-![Captura de tela 2024-02-29 115143](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/2a65ab7d-0f1f-4839-a9a9-5c616efab7a9)
+   ![Captura de tela 2024-02-29 115143](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/2a65ab7d-0f1f-4839-a9a9-5c616efab7a9)
 
 _apos isso a caixa de mensagem deve aparecer informando que o item foi excluido._
-![Captura de tela 2024-02-29 115231](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/94701b80-1ac8-445d-8a5a-cd5f8757c7e6)
+ ![Captura de tela 2024-02-29 115231](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/94701b80-1ac8-445d-8a5a-cd5f8757c7e6)
 
 </details>
 
