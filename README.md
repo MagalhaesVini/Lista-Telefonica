@@ -73,11 +73,10 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
 1. Após realizar a busca pelo contato desejado, clique no botão "Editar" ao lado do contato.
 ![Captura de tela 2024-02-29 114950](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/8689803a-57ec-45cb-a52b-19667586e933)
 2. Ao clicar em "Editar", uma mensagem de confirmação aparece; selecionar "Sim" abre o formulário de edição para modificar o contato, enquanto "Não" cancela a operação.
-![Captura de tela 2024-02-29 115033](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/4f697094-a8c5-4b9e-a55f-15b70a13f937)
+        ![Captura de tela 2024-02-29 115033](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/4f697094-a8c5-4b9e-a55f-15b70a13f937)
 3. O formulário de edição será aberto, permitindo que você atualize as informações do contato.
 4. Após fazer as alterações desejadas, clique em "Salvar" para atualizar o contato.
 ![Captura de tela 2024-02-29 115100](https://github.com/MagalhaesVini/Lista-Telefonica/assets/105064550/ea4517cd-7ae3-4f3e-8c7f-b6211b1867f0)
-
 
 </details>
 
