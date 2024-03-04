@@ -202,15 +202,15 @@ function DadosObtidos({ dados }) {
       {confirmEdit && (
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(238, 227, 227, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
           <p>Tem certeza que deseja editar?</p>
-          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
           <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
+          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
         </div>
       )}
       {confirmDelete && (
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(238, 227, 227, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
           <p>Tem certeza que deseja excluir {itemToDelete ? dadosState.find(item => item._id === itemToDelete)?.nome : ''}?</p>
-          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
           <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
+          <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
         </div>
       )}
       {isEditing && (
@@ -220,6 +220,7 @@ function DadosObtidos({ dados }) {
           onSave={handleSaveEdit}
         />
       )}
+      
       <Pagination
         count={Math.ceil((dadosState.length - deletedItemIds.length) / itemsPerPage)}
         page={currentPage}

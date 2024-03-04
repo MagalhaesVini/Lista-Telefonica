@@ -45,8 +45,20 @@ function Formulario({ handleSubmit, handleFecharFormulario }) {
     const { name, value } = e.target;
     let newValue = value;
 
+    if (value === '') {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: '',
+      }));
+      return;
+    }
+
     if (name === 'documento_identificacao') {
-      newValue = formatDocument(value);
+      if (value.length < formData[name].length) {
+        newValue = value;
+      } else {
+        newValue = formatDocument(value);
+      }
     } else if (name === 'comercial') {
       newValue = value.replace(/\D/g, '');
       newValue = newValue.replace(/^(\d{2})(\d{4})(\d{4})$/, '($1) $2-$3');
@@ -60,6 +72,7 @@ function Formulario({ handleSubmit, handleFecharFormulario }) {
       [name]: newValue,
     }));
   };
+
 
   const handleSubmitForm = async (e) => {
     e.preventDefault();
@@ -110,18 +123,18 @@ function Formulario({ handleSubmit, handleFecharFormulario }) {
       <form onSubmit={handleSubmitForm}>
         {errorMessage && <p style={{ color: 'red', textAlign: 'center', marginBottom: '10px' }}>{errorMessage}</p>}
         <p style={{ marginBottom: '4px', fontSize: '1rem', fontWeight: 'bold', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Dados:</p>
-        <TextField name="nome" label="Nome" value={formData.nome} onChange={handleChange} fullWidth required style={{ marginBottom: '4px' }} />
-        <TextField name="documento_identificacao" label="Documento Identificação" value={formData.documento_identificacao} onChange={handleChange} fullWidth inputProps={{ maxLength: 18 }} required style={{ marginBottom: '10px' }} />
-        <TextField name="empresa" label="Empresa" value={formData.empresa} onChange={handleChange} fullWidth style={{ marginBottom: '4px' }} />
-        <TextField name="setor" label="Setor" value={formData.setor} onChange={handleChange} fullWidth style={{ marginBottom: '4px' }} />
-        <TextField name="endereço" label="Endereço" value={formData.endereço} onChange={handleChange} fullWidth style={{ marginBottom: '4px' }} />
+        <TextField name="nome" label="Nome" value={formData.nome} onChange={handleChange} fullWidth required style={{ marginBottom: '8px' }} />
+        <TextField name="documento_identificacao" label="Documento Identificação" value={formData.documento_identificacao} onChange={handleChange} fullWidth inputProps={{ maxLength: 18 }} required style={{ marginBottom: '8px' }} />
+        <TextField name="empresa" label="Empresa" value={formData.empresa} onChange={handleChange} fullWidth style={{ marginBottom: '8px' }} />
+        <TextField name="setor" label="Setor" value={formData.setor} onChange={handleChange} fullWidth style={{ marginBottom: '8px' }} />
+        <TextField name="endereço" label="Endereço" value={formData.endereço} onChange={handleChange} fullWidth style={{ marginBottom: '8px' }} />
         <p style={{ marginTop: '4px', marginBottom: '4px', fontSize: '1rem', fontWeight: 'bold', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Telefones:</p>
-        <TextField name="comercial" label="Comercial" value={formData.comercial} onChange={handleChange} fullWidth inputProps={{ maxLength: 10 }} style={{ marginBottom: '4px' }} />
-        <TextField name="celular" label="Celular" value={formData.celular} onChange={handleChange} fullWidth required inputProps={{ maxLength: 11 }} style={{ marginBottom: '4px' }} />
-        <TextField name="outros" label="Outros" value={formData.outros} onChange={handleChange} fullWidth inputProps={{ maxLength: 11 }} style={{ marginBottom: '4px' }} />
+        <TextField name="comercial" label="Comercial" value={formData.comercial} onChange={handleChange} fullWidth inputProps={{ maxLength: 10 }} style={{ marginBottom: '8px' }} />
+        <TextField name="celular" label="Celular" value={formData.celular} onChange={handleChange} fullWidth required inputProps={{ maxLength: 11 }} style={{ marginBottom: '8px' }} />
+        <TextField name="outros" label="Outros" value={formData.outros} onChange={handleChange} fullWidth inputProps={{ maxLength: 11 }} style={{ marginBottom: '8px' }} />
         <div style={{ marginTop: '1px', display: 'flex', justifyContent: 'space-between' }}>
-          <Button type="submit" variant="contained" startIcon={<SendIcon />}>Enviar</Button>
           <Button variant="outlined" onClick={handleFecharFormulario}>Cancelar</Button>
+          <Button type="submit" variant="contained" startIcon={<SendIcon />}>Enviar</Button>
         </div>
       </form>
     </div>
