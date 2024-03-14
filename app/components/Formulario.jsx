@@ -133,8 +133,8 @@ function Formulario({ handleSubmit, handleFecharFormulario }) {
         <TextField name="celular" label="Celular" value={formData.celular} onChange={handleChange} fullWidth required inputProps={{ maxLength: 11 }} style={{ marginBottom: '8px' }} />
         <TextField name="outros" label="Outros" value={formData.outros} onChange={handleChange} fullWidth inputProps={{ maxLength: 11 }} style={{ marginBottom: '8px' }} />
         <div style={{ marginTop: '1px', display: 'flex', justifyContent: 'space-between' }}>
-          <Button variant="outlined" onClick={handleFecharFormulario}>Cancelar</Button>
           <Button type="submit" variant="contained" startIcon={<SendIcon />}>Enviar</Button>
+          <Button variant="outlined" onClick={handleFecharFormulario}>Cancelar</Button>
         </div>
       </form>
     </div>
