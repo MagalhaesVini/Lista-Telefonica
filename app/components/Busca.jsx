@@ -7,9 +7,9 @@ function Busca() {
     try {
       let url = '';
       if (tipo === 'nome') {
-        url = `https://call-list-api-development.up.railway.app/person/${valor}`;
+        url = `https://call-list-api.onrender.com/person/${valor}`;
       } else if (tipo === 'celular') {
-        url = `https://call-list-api-development.up.railway.app/person/celular/${valor}`;
+        url = `https://call-list-api.onrender.com/person/celular/${valor}`;
       } else {
         console.error('Tipo de busca inválido:', tipo);
         return;

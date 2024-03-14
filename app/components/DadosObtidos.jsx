@@ -109,7 +109,7 @@ function DadosObtidos({ dados }) {
   const handleDeleteItem = async (id) => {
     if (confirmDelete) {
       try {
-        const response = await fetch(`https://call-list-api-development.up.railway.app/person/${id}`, {
+        const response = await fetch(`https://call-list-api.onrender.com/person/${id}`, {
           method: 'DELETE',
         });
 

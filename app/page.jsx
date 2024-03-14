@@ -14,7 +14,7 @@ function Page() {
 
   const handleSubmit = async (dadosPessoa) => {
     try {
-      const response = await fetch('https://call-list-api-development.up.railway.app/person', {
+      const response = await fetch('https://call-list-api.onrender.com/person', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

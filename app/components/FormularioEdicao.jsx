@@ -17,7 +17,7 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`https://call-list-api-development.up.railway.app/person/${itemEditado._id}`, {
+      const response = await fetch(`https://call-list-api.onrender.com/person/${itemEditado._id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
