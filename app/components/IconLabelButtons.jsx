@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import AddIcon from '@mui/icons-material/Add';
+import RefreshIcon from '@mui/icons-material/Refresh';
 
 function formatarCelular(numero) {
   if (!numero) return '';
@@ -47,6 +48,10 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
     setTipoBusca('nome');
   };
 
+  const handleRefreshClick = () => {
+    window.location.reload();
+  };
+
   return (
     <div className="search-bar">
       <Stack direction="row" alignItems="center" spacing={2}>
@@ -69,6 +74,13 @@ function IconLabelButtons({ handleBuscarNomeClick, handleBuscarCelularClick, han
           onChange={(e) => {setCelular(e.target.value); setTipoBusca('celular');}}
           onKeyPress={handleKeyPress}
         />
+        <Button
+          variant="contained"
+          size="large"
+          onClick={handleRefreshClick}
+          startIcon={<RefreshIcon />}
+        >
+        </Button>
         <Button
           variant="contained"
           startIcon={<SearchIcon />}
