@@ -28,7 +28,7 @@ Utiliza a API [Call-List](https://github.com/MagalhaesVini/Call-List-API/blob/ma
   
   ### Acesse o sistema através do link fornecido após a implantação no Vercel
   
-  https://call-list-api.onrender.com/
+  https://lista-telefonica-ruddy.vercel.app/
   (_Você pode utilizar Ctrl + botão esquerdo do mouse para abrir em uma nova aba_)
   
 </details>
