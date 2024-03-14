@@ -8,15 +8,16 @@ import CallIcon from '@mui/icons-material/Call';
 import Button from '@mui/material/Button';
 import FormularioEdicao from './FormularioEdicao';
 
-function formatarTelefone(telefone) {
+const formatarTelefone = (telefone) => {
   if (!telefone) return '';
   const cleaned = ('' + telefone).replace(/\D/g, '');
-  const match = cleaned.match(/^(\d{2})(\d{4,5})(\d{4})$/);
-  if (match) {
-    return `(${match[1]}) ${match[2]}-${match[3]}`;
+  if (cleaned.length === 11) {
+    return cleaned.replace(/(\d{2})(\d{1})(\d{4})(\d{4})/, '($1) $2 $3-$4');
+  } else if (cleaned.length === 10) {
+    return cleaned.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
   }
   return telefone;
-}
+};
 
 function formatarDocumento(documento) {
   if (!documento) return '';
@@ -157,7 +158,7 @@ function DadosObtidos({ dados }) {
     const brazilianPhoneNumber = `+55${phoneNumber}`;
     window.location.href = `tel:${brazilianPhoneNumber}`;
   };
-  
+
 
   return (
     <div className="dados-obtidos">
@@ -216,7 +217,7 @@ function DadosObtidos({ dados }) {
       )}
       {confirmDelete && (
         <div style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: 'rgba(238, 227, 227, 0.9)', padding: '20px', borderRadius: '50px', boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.1)', zIndex: 9999, textAlign: 'center' }}>
-          <p>Tem certeza que deseja excluir {itemToDelete ? dadosState.find(item => item._id === itemToDelete)?.nome : ''}?</p>
+          <p>Tem certeza que deseja excluir <strong>{itemToDelete ? dadosState.find(item => item._id === itemToDelete)?.nome : ''}</strong>?</p>
           <Button onClick={handleConfirmNo} size='small' variant="outlined">Não</Button>
           <Button onClick={handleConfirmYes} style={{ margin: '5px' }} size='small' variant="contained" color="primary">Sim</Button>
         </div>
@@ -228,7 +229,7 @@ function DadosObtidos({ dados }) {
           onSave={handleSaveEdit}
         />
       )}
-      
+
       <Pagination
         count={Math.ceil((dadosState.length - deletedItemIds.length) / itemsPerPage)}
         page={currentPage}
