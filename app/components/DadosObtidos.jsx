@@ -4,6 +4,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import CallIcon from '@mui/icons-material/Call';
 import Button from '@mui/material/Button';
 import FormularioEdicao from './FormularioEdicao';
 
@@ -152,6 +153,12 @@ function DadosObtidos({ dados }) {
     setItemToDelete(null);
   };
 
+  const handleDialNumber = (phoneNumber) => {
+    const brazilianPhoneNumber = `+55${phoneNumber}`;
+    window.location.href = `tel:${brazilianPhoneNumber}`;
+  };
+  
+
   return (
     <div className="dados-obtidos">
       {(deleteMessage || updateMessage) && (
@@ -194,6 +201,7 @@ function DadosObtidos({ dados }) {
               <div style={{ position: 'absolute', right: 5, top: 120 }}>
                 <Button onClick={() => handleEditItem(item._id)} style={{ marginRight: '5px' }} size='small' startIcon={<EditIcon />}>Editar</Button>
                 <Button onClick={() => handleDeleteItem(item._id)} size='small' startIcon={<DeleteIcon />}>Excluir</Button>
+                <Button onClick={() => handleDialNumber(item.celular)} size='small' startIcon={<CallIcon />}><strong>Discar</strong></Button>
               </div>
             </div>
           )}
