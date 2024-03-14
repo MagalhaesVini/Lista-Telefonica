@@ -7,7 +7,7 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
   const [formData, setFormData] = useState({
     nome: itemEditado ? itemEditado.nome : '',
     celular: itemEditado ? itemEditado.celular : '',
-    documentoIdentificacao: itemEditado ? itemEditado.documento_identificacao : '',
+    documento_identificacao: itemEditado ? itemEditado.documento_identificacao : '',
     endereço: itemEditado ? itemEditado.endereço : '',
     empresa: itemEditado ? itemEditado.empresa : '',
     setor: itemEditado ? itemEditado.setor : '',
@@ -41,7 +41,7 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
       <p style={{ marginBottom: '4px', fontSize: '1rem', fontWeight: 'bold', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>Editar Dados</p>
       <TextField label="Nome" value={formData.nome} onChange={(e) => setFormData({ ...formData, nome: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Celular" value={formData.celular} onChange={(e) => setFormData({ ...formData, celular: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
-      <TextField label="Documento de Identificação" value={formData.documentoIdentificacao} onChange={(e) => setFormData({ ...formData, documentoIdentificacao: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
+      <TextField label="Documento de Identificação" value={formData.documento_identificacao} onChange={(e) => setFormData({ ...formData, documento_identificacao: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Endereço" value={formData.endereço} onChange={(e) => setFormData({ ...formData, endereço: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Empresa" value={formData.empresa} onChange={(e) => setFormData({ ...formData, empresa: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Setor" value={formData.setor} onChange={(e) => setFormData({ ...formData, setor: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
