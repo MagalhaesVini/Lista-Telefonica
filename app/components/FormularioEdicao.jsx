@@ -48,8 +48,8 @@ function FormularioEdicao({ itemEditado, onCancel, onSave }) {
       <TextField label="Telefone Comercial" value={formData.comercial} onChange={(e) => setFormData({ ...formData, comercial: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <TextField label="Outros" value={formData.outros} onChange={(e) => setFormData({ ...formData, outros: e.target.value })} fullWidth style={{ marginBottom: '5px' }} />
       <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '10px' }}>
-        <Button variant="contained" color="primary" startIcon={<SendIcon />} onClick={handleSave}>Salvar</Button>
         <Button variant="outlined" onClick={onCancel}>Cancelar</Button>
+        <Button variant="contained" color="primary" startIcon={<SendIcon />} onClick={handleSave}>Salvar</Button>
       </div>
     </div>
   );
